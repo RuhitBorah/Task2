@@ -6,7 +6,7 @@ body {
 }
 
 .hero {
-    position: relative;   /* important so overlay stays inside */
+    position: relative;   
     height: 100vh;
     width: 100%;
     overflow: hidden;
@@ -15,59 +15,87 @@ body {
 .hero img {
     height: 100%;
     width: 100%;
-    object-fit: cover;   /* makes image behave like background-size: cover */
-    display: block;
+    object-fit: cover;  
+    /* display: block; */
 }
 
 .overlay {
-    /* position: absolute; */
-    top: 0;
-    left: 0;
-    height: 100%;       /* full height */
-    width: 100%;        /* full width */
-    background-color: rgba(0, 0, 0, 0.6); /* black with 50% opacity */
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background: rgba(0,0,0,0.4); /* dark overlay */
+      z-index: 1;
 }
 
 .hero-content{
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 30%;
-    left: 22%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      z-index: 2;
 }
 
-.hero-content button{
-    position: relative;
-    padding: 12px;
-    margin: 3px 40%;
-    width: 136px;
-    top: -15px;
-    justify-content: center;
+.hero-content h1{
+    font-family: "Montez";
+    font-size: 90px;
+    font-weight: 400;
     text-align: center;
-    border-radius: 20px;
-    font-size: 17px; 
-    font-family: "Aladin";
+        color: transparent;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-stroke: 1px rgb(255, 255, 255); 
+        text-shadow: 4px 4px 12px rgba(0,0,0,0.6);
+
+    margin: 0;
+    padding: 0;
+    z-index: 2
+
+}
+
+
+
+.hero-content button{
+padding: 12px 40px;
+    border-radius: 10px;
+    font-size: 24px;
+    font-family: "Aladin", cursive;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s ease;
 }
 
 .hero-content button:hover{
     transform: scale(1.05);
-    background-color: aqua;
+    background-color: c;
     box-shadow:0 8px 16px 0 rgba(0,0,0,0.6);
 }
 
-.hero-content h1{
-    position: relative;
-    top:-37px;
-    font-family: "Montez";
-    font-size: 68px;
-    text-align: center;
-    font-weight: 700;
-    mix-blend-mode: overlay;
-    text-shadow: 2px 0px 2px black;
+/* Your existing styles remain unchanged */
 
+/* Responsive adjustments */
+@media (max-width: 769px) {
+  .hero-content h1 {
+    font-size: 60px; /* smaller font for tablets/mobiles */
+  }
+
+  .hero-content button {
+    font-size: 18px;
+    margin: 2px;
+    padding: 10px 26px;
+  }
 }
 
-.boarder{
-    border: 3px;
-}
+@media (max-width: 550px) {
+  .hero-content h1 {
+    font-size: 34px; /* better fit for small phones */
+  }
 
+  .hero-content button {
+    font-size: 16px;
+    padding: 8px 24px;
+  }
+}
