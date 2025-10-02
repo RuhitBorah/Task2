@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Aladin&family=Montez&display=swap');
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+.hero {
+    position: relative;   /* important so overlay stays inside */
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+.hero img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;   /* makes image behave like background-size: cover */
+    display: block;
+}
+
+.overlay {
+    /* position: absolute; */
+    top: 0;
+    left: 0;
+    height: 100%;       /* full height */
+    width: 100%;        /* full width */
+    background-color: rgba(0, 0, 0, 0.6); /* black with 50% opacity */
+}
+
+.hero-content{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 30%;
+    left: 22%;
+}
+
+.hero-content button{
+    position: relative;
+    padding: 12px;
+    margin: 3px 40%;
+    width: 136px;
+    top: -15px;
+    justify-content: center;
+    text-align: center;
+    border-radius: 20px;
+    font-size: 17px; 
+    font-family: "Aladin";
+}
+
+.hero-content button:hover{
+    transform: scale(1.05);
+    background-color: aqua;
+    box-shadow:0 8px 16px 0 rgba(0,0,0,0.6);
+}
+
+.hero-content h1{
+    position: relative;
+    top:-37px;
+    font-family: "Montez";
+    font-size: 68px;
+    text-align: center;
+    font-weight: 700;
+    mix-blend-mode: overlay;
+    text-shadow: 2px 0px 2px black;
+
+}
+
+.boarder{
+    border: 3px;
+}
+
